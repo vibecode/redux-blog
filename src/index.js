@@ -5,7 +5,7 @@ import PostIndex from './components/PostsIndex';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 
 import createHistory from 'history/createBrowserHistory';
@@ -15,8 +15,10 @@ import { ConnectedRouter, routerReducer, routerMiddleware,  push } from 'react-r
 
 import reducers from './reducers';
 
+import promise from 'redux-promise';
+
 const history = createHistory();
-const middleware = routerMiddleware(history);
+const middleware = compose(routerMiddleware(history), promise);
 const store = createStore(combineReducers({ ...reducers, router: routerReducer }), applyMiddleware(middleware));
 
 ReactDOM.render(
