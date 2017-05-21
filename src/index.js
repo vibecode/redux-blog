@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import PostIndex from './components/PostsIndex';
+import PostsIndex from './components/PostsIndex';
+import PostsNew from './components/PostsNew';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -27,7 +28,8 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <div>
           <Route exact path="/" component={App}/>
-          <Route exact path="/" component={PostIndex}/>
+          <Route exact path="/" component={PostsIndex}/>
+          <Route path="/posts/new" component={PostsNew}/>
         </div>
       </ConnectedRouter>
     </Provider>,
