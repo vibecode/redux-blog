@@ -5,22 +5,16 @@ import PostsIndex from './components/PostsIndex';
 import PostsNew from './components/PostsNew';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-
 import createHistory from 'history/createBrowserHistory';
 import { Route, Switch } from 'react-router-dom';
-
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
-
+import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
 import reducers from './reducers';
-
 import promise from 'redux-promise';
 
 const history = createHistory();
-const middleware = compose(routerMiddleware(history), promise);
-const store = createStore(combineReducers({ ...reducers, router: routerReducer }), applyMiddleware(middleware));
+const store = createStore(reducers, applyMiddleware(routerMiddleware(history), promise));
 
 ReactDOM.render(
     <Provider store={store}>

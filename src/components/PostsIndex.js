@@ -14,7 +14,8 @@ class PostsIndex extends Component {
           <div>
             <Link to="/posts/new">Add some shit</Link>
           </div>
-          List of posts</div>
+          List of posts
+        </div>
     );
   }
 }
