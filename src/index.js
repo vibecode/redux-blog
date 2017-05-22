@@ -10,9 +10,9 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 
 import createHistory from 'history/createBrowserHistory';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 
-import { ConnectedRouter, routerReducer, routerMiddleware,  push } from 'react-router-redux';
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
 
 import reducers from './reducers';
 
@@ -27,9 +27,11 @@ ReactDOM.render(
       { /* ConnectedRouter will use the store from Provider automatically */ }
       <ConnectedRouter history={history}>
         <div>
-          <Route exact path="/" component={App}/>
-          <Route exact path="/" component={PostsIndex}/>
-          <Route path="/posts/new" component={PostsNew}/>
+          <Route component={App} />
+          <Switch>
+            <Route exact path="/" component={PostsIndex} />
+            <Route path="/posts/new" component={PostsNew} />
+          </Switch>
         </div>
       </ConnectedRouter>
     </Provider>,

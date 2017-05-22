@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
+import  { Link }  from 'react-router-dom';
 
 class PostsIndex extends Component {
   componentWillMount() {
@@ -9,7 +10,11 @@ class PostsIndex extends Component {
 
   render() {
     return (
-        <div>List of posts</div>
+        <div>
+          <div>
+            <Link to="/posts/new">Add some shit</Link>
+          </div>
+          List of posts</div>
     );
   }
 }
