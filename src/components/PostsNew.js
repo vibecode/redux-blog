@@ -4,6 +4,7 @@ import { RenderInput } from './RenderInput';
 import { createPost } from '../actions/index';
 import { connect } from 'react-redux';
 import { RenderTextArea } from './RenderTextArea';
+import  { Link }  from 'react-router-dom';
 
 class PostsNew extends Component {
   render() {
@@ -37,6 +38,7 @@ class PostsNew extends Component {
           </div>
 
           <button type="submit">Submit</button>
+          <Link to="/" >Cancel </Link>
         </form>
     );
   }
