@@ -3,6 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 import { RenderInput } from './RenderInput';
 import { createPost } from '../actions/index';
 import { connect } from 'react-redux';
+import { RenderTextArea } from './RenderTextArea';
 
 class PostsNew extends Component {
   render() {
@@ -31,7 +32,7 @@ class PostsNew extends Component {
             <label htmlFor="content">Content</label>
             <Field
                 name="content"
-                component="textarea"
+                component={RenderTextArea}
                 rows="12" />
           </div>
 
@@ -41,6 +42,24 @@ class PostsNew extends Component {
   }
 }
 
-PostsNew = reduxForm({ form: 'PostsNewForm' })(PostsNew);
+function validate(values) {
+  const errors = {};
+
+  if (!values.title) {
+    errors.title = 'Enter a title';
+  }
+
+  if (!values.title) {
+    errors.categories = 'Enter categories';
+  }
+
+  if (!values.title) {
+    errors.content = 'Enter some content';
+  }
+
+  return errors;
+}
+
+PostsNew = reduxForm({ form: 'PostsNewForm', validate })(PostsNew);
 
 export default connect(null, { createPost })(PostsNew);
