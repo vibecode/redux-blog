@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Header from './components/Header';
 import PostsIndex from './components/PostsIndex';
 import PostsNew from './components/PostsNew';
 import PostsShow from './components/PostsShow';
@@ -21,8 +21,8 @@ ReactDOM.render(
     <Provider store={store}>
       { /* ConnectedRouter will use the store from Provider automatically */ }
       <ConnectedRouter history={history}>
-        <div>
-          <Route component={App} />
+        <div className="container">
+          <Route component={Header} />
           <Switch>
             <Route exact path="/" component={PostsIndex} />
             <Route path="/posts/new" component={PostsNew} />
