@@ -7,11 +7,23 @@ import { RenderTextArea } from './RenderTextArea';
 import  { Link }  from 'react-router-dom';
 
 class PostsNew extends Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(props) {
+    this.props.createPost(props)
+        .then(() => {
+          this.props.history.push('/');
+        })
+  }
+
   render() {
     const { handleSubmit } = this.props;
 
     return (
-        <form onSubmit={handleSubmit(this.props.createPost)}>
+        <form onSubmit={handleSubmit(this.onSubmit)}>
           <h3>Create a new post</h3>
           <div className="form-group">
             <label htmlFor="title">Title</label>
