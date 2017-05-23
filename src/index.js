@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import PostsIndex from './components/PostsIndex';
 import PostsNew from './components/PostsNew';
+import PostsShow from './components/PostsShow';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { createStore, applyMiddleware } from 'redux';
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={PostsIndex} />
             <Route path="/posts/new" component={PostsNew} />
+            <Route path="/posts/:id" component={PostsShow}/>
           </Switch>
         </div>
       </ConnectedRouter>
