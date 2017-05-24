@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +14,7 @@ body {
 }
 .blog-title {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .posts-title {
@@ -61,4 +66,54 @@ body {
   padding: 12px;
   border-radius: 6px;
   min-width: 150px;
+}
+
+.post-form {
+  margin: 0 auto;
+  width: 600px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border: 1px solid #450882;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #450882;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #ea4638;
+  font-size: 12px;
+}
+
+button {
+  display: inline-block;
+  background-color: #450882;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  min-width: 150px;
+  font-size: 18px;
+  margin-right: 26px;
+  margin-bottom: 26px;
 }

@@ -23,7 +23,7 @@ class PostsNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
-        <form onSubmit={handleSubmit(this.onSubmit)}>
+        <form className="post-form" onSubmit={handleSubmit(this.onSubmit)}>
           <h3>Create a new post</h3>
           <div className="form-group">
             <label htmlFor="title">Title</label>
@@ -36,6 +36,7 @@ class PostsNew extends Component {
           <div className="form-group">
             <label htmlFor="categories">Categories</label>
             <Field
+                className="post-input"
                 name="categories"
                 component={RenderInput}
                 type="text" />
@@ -44,12 +45,13 @@ class PostsNew extends Component {
           <div className="form-group">
             <label htmlFor="content">Content</label>
             <Field
+                className="post-input"
                 name="content"
                 component={RenderTextArea}
                 rows="12" />
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" className="button">Submit</button>
           <Link to="/" >Cancel </Link>
         </form>
     );
