@@ -117,3 +117,15 @@ button {
   margin-right: 26px;
   margin-bottom: 26px;
 }
+
+.post-title {
+  margin-bottom: 12px;
+}
+
+.categories-title {
+  margin: 0 0 36px;
+}
+
+.delete-post {
+  background-color: #ea4638;
+}

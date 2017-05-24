@@ -33,10 +33,10 @@ class PostShow extends Component {
     return (
         <div>
           <Link to="/">Home</Link>
-          <button onClick={this.onDeleteClick}>Delete post</button>
-          <h3>{post.title}</h3>
-          <h6>Categories: {post.categories}</h6>
+          <h3 className="post-title">{post.title}</h3>
+          <h6 className="categories-title">Categories: {post.categories}</h6>
           <p>{post.content}</p>
+          <button className="delete-post" onClick={this.onDeleteClick}>Delete post</button>
         </div>
     );
   }
